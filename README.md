@@ -5,6 +5,6 @@ Thanks to this module, schedules generated in python are transferred to the DAGr
 
 Detailed information is available in the project's Wiki at the following links: 
 
-  * Introduction - [Home](https://github.com/zipper555/contiki-ng/wiki)
-  * Implementation details - [Documentation](https://github.com/zipper555/contiki-ng/wiki/API-Documentation)
-  * Example application - [Step by step guide](https://github.com/zipper555/contiki-ng/wiki/Step-by-step-guide-for-Dynamic-Scheduling)  
+  * Introduction - [Home](https://github.com/tum-lkn/contiki-ng/wiki)
+  * Implementation details - [Documentation](https://github.com/tum-lkn/contiki-ng/wiki/API-Documentation)
+  * Example application - [Step by step guide](https://github.com/tum-lkn/contiki-ng/wiki/Step-by-step-guide-for-Dynamic-Scheduling)  
