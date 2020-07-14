@@ -62,7 +62,6 @@ int curr_log_level_mac = LOG_CONF_LEVEL_MAC;
 int curr_log_level_framer = LOG_CONF_LEVEL_FRAMER;
 int curr_log_level_6top = LOG_CONF_LEVEL_6TOP;
 int curr_log_level_coap = LOG_CONF_LEVEL_COAP;
-int curr_log_level_snmp = LOG_CONF_LEVEL_SNMP;
 int curr_log_level_lwm2m = LOG_CONF_LEVEL_LWM2M;
 int curr_log_level_main = LOG_CONF_LEVEL_MAIN;
 
@@ -76,7 +75,6 @@ struct log_module all_modules[] = {
   {"framer", &curr_log_level_framer, LOG_CONF_LEVEL_FRAMER},
   {"6top", &curr_log_level_6top, LOG_CONF_LEVEL_6TOP},
   {"coap", &curr_log_level_coap, LOG_CONF_LEVEL_COAP},
-  {"snmp", &curr_log_level_snmp, LOG_CONF_LEVEL_SNMP},
   {"lwm2m", &curr_log_level_lwm2m, LOG_CONF_LEVEL_LWM2M},
   {"main", &curr_log_level_main, LOG_CONF_LEVEL_MAIN},
   {NULL, NULL, 0},
@@ -156,16 +154,6 @@ log_lladdr_compact(const linkaddr_t *lladdr)
     LOG_OUTPUT("LL-%04x", UIP_HTONS(lladdr->u16));
 #endif
 #endif /* BUILD_WITH_DEPLOYMENT */
-  }
-}
-/*---------------------------------------------------------------------------*/
-void
-log_bytes(const void *data, size_t length)
-{
-  const uint8_t *u8data = (const uint8_t *)data;
-  size_t i;
-  for(i = 0; i != length; ++i) {
-    LOG_OUTPUT("%02x", u8data[i]);
   }
 }
 /*---------------------------------------------------------------------------*/

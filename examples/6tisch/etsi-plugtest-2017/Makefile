@@ -1,7 +1,7 @@
 CONTIKI_PROJECT = node
 all: $(CONTIKI_PROJECT)
 
-PLATFORMS_EXCLUDE = sky z1 nrf52dk native
+PLATFORMS_EXCLUDE = sky z1 nrf52dk native simplelink
 BOARDS_EXCLUDE = sensortag/cc2650 sensortag/cc1350
 
 MAKE_WITH_SECURITY   ?= 0 # force Security from command line
@@ -9,11 +9,8 @@ ifeq ($(MAKE_WITH_SECURITY),1)
 CFLAGS += -DWITH_SECURITY=1
 endif
 
-CONTIKI              =../../..
-
-include $(CONTIKI)/Makefile.dir-variables
-MODULES             += $(CONTIKI_NG_SERVICES_DIR)/shell
-MODULES             += $(CONTIKI_NG_MAC_DIR)/tsch/sixtop
+MODULES             += os/services/shell
+MODULES             += os/net/mac/tsch/sixtop
 PROJECT_SOURCEFILES += sf-plugtest.c
 CFLAGS              += -Wno-nonnull-compare
 
@@ -25,4 +22,5 @@ endif
 
 MAKE_MAC = MAKE_MAC_TSCH
 
+CONTIKI              =../../..
 include $(CONTIKI)/Makefile.include
